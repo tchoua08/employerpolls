@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="nav"
+  >
+    <div
+      class="nav-left"
+    >
+      <a
+        aria-current="page"
+        class="nav-link active"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class="nav-link"
+        href="/leaderboard"
+      >
+        Leaderboard
+      </a>
+      <a
+        class="nav-link"
+        href="/add"
+      >
+        New
+      </a>
+    </div>
+    <div
+      class="nav-right"
+    >
+      <span
+        class="nav-user"
+      >
+        <img
+          alt="Sarah Edo"
+          class="avatar-sm"
+          src="x"
+        />
+        Sarah Edo
+      </span>
+      <button
+        class="btn-link"
+      >
+        Logout
+      </button>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
