@@ -4,7 +4,6 @@ import { createStore } from "redux";
 import { MemoryRouter } from "react-router-dom";
 import Login from "./Login";
 
-// reducer minimal pour test UI (pas besoin du vrai store)
 function reducer(state = {}, action) {
   return state;
 }
@@ -25,12 +24,11 @@ test("DOM test: submit button enables after typing user and password", () => {
   const passInput = screen.getByPlaceholderText("Password");
   const submitBtn = screen.getByRole("button", { name: /submit/i });
 
-  // au début disabled
+
   expect(submitBtn).toBeDisabled();
 
   fireEvent.change(userInput, { target: { value: "sarahedo" } });
   fireEvent.change(passInput, { target: { value: "1234" } });
 
-  // après change, enabled
   expect(submitBtn).not.toBeDisabled();
 });

@@ -13,7 +13,6 @@ const PollPage = () => {
 
   const myAnswer = useSelector((s) => s.users?.[authedUser]?.answers?.[id] || null);
 
-  // ✅ Après login, si la question n’existe pas → 404
   if (!question) {
     return <Navigate to="/404" replace />;
   }
@@ -31,7 +30,7 @@ const PollPage = () => {
   const opt2 = useMemo(() => compute(question.optionTwo.votes || []), [question, totalVotes]);
 
   const vote = (answerKey) => {
-    if (myAnswer) return; // ✅ pas de 2ème vote
+    if (myAnswer) return; 
     dispatch(handleSaveQuestionAnswer(id, answerKey));
   };
 
@@ -51,8 +50,6 @@ const PollPage = () => {
       </div>
 
       <h3 className="poll-wyr">Would You Rather</h3>
-
-      {/* ✅ Si pas répondu : vue vote (capture Udacity) */}
       {!myAnswer ? (
         <div className="poll-options-row">
           <div className="poll-option-card">
@@ -70,7 +67,6 @@ const PollPage = () => {
           </div>
         </div>
       ) : (
-        /* ✅ Si répondu : vue résultats (votes + % + badge choix) */
         <div className="results-wrap">
           <div className={myAnswer === "optionOne" ? "result-option selected" : "result-option"}>
             {myAnswer === "optionOne" && <div className="badge">Your Vote</div>}

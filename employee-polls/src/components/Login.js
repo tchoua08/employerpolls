@@ -2,13 +2,11 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import { setAuthedUser } from "../actions/authedUser";
-
-// Mets ton image dans: src/assets/employee-polls.png
 import heroImg from "../assets/logo.png";
 
 const Login = () => {
   const [user, setUser] = useState("");
-  const [password, setPassword] = useState(""); // UI seulement (comme la capture)
+  const [password, setPassword] = useState(""); 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -21,8 +19,6 @@ const Login = () => {
     e.preventDefault();
     if (!canSubmit) return;
 
-    // Dans le projet Udacity, tu peux “impersonate”:
-    // Ici on met le username saisi comme authedUser
     dispatch(setAuthedUser(user.trim()));
     navigate(from, { replace: true });
   };

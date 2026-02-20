@@ -4,7 +4,6 @@ import { MemoryRouter } from "react-router-dom";
 import { render } from "@testing-library/react";
 import Nav from "./Nav";
 
-// reducer minimal (suffit pour le snapshot)
 function reducer(state = {}, action) {
   return state;
 }

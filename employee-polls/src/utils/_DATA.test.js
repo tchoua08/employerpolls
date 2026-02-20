@@ -26,7 +26,6 @@ describe("_saveQuestion", () => {
     await expect(
       _saveQuestion({
         optionOneText: "Only one option",
-        // optionTwoText missing
         author: "sarahedo",
       })
     ).rejects.toEqual("Please provide optionOneText, optionTwoText, and author");
@@ -37,7 +36,7 @@ describe("_saveQuestionAnswer", () => {
   it("returns true when correctly formatted data is passed", async () => {
     const result = await _saveQuestionAnswer({
       authedUser: "sarahedo",
-      qid: "8xf0y6ziyjabvozdd253nd", // id existant dans _DATA.js d'Udacity
+      qid: "8xf0y6ziyjabvozdd253nd", 
       answer: "optionOne",
     });
 
@@ -49,7 +48,6 @@ describe("_saveQuestionAnswer", () => {
       _saveQuestionAnswer({
         authedUser: "sarahedo",
         qid: "8xf0y6ziyjabvozdd253nd",
-        // answer missing
       })
     ).rejects.toEqual("Please provide authedUser, qid, and answer");
   });

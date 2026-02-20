@@ -32,6 +32,6 @@ test("leaderboard shows user name and counts", () => {
   );
 
   expect(screen.getByText("Sarah Edo")).toBeInTheDocument();
-  expect(screen.getByText("2")).toBeInTheDocument(); // answered
-  expect(screen.getByText("1")).toBeInTheDocument(); // created
+  expect(screen.getByText("2")).toBeInTheDocument();
+  expect(screen.getByText("1")).toBeInTheDocument(); 
 });

@@ -29,9 +29,7 @@ describe("users reducer", () => {
 
     const next = users(initial, { type: RECEIVE_USERS, users: payload });
 
-    // doit merger les users dans le state
     expect(next).toEqual(payload);
-    // doit être immuable
     expect(next).not.toBe(initial);
   });
 
@@ -62,15 +60,13 @@ describe("users reducer", () => {
 
     const next = users(initial, action);
 
-    // new answer ajouté
     expect(next.sarahedo.answers.newQ).toBe("optionOne");
-    // ancien answer conservé
     expect(next.sarahedo.answers.oldQ).toBe("optionTwo");
 
-    // immutabilité : objets différents
+ 
     expect(next).not.toBe(initial);
     expect(next.sarahedo).not.toBe(initial.sarahedo);
-    expect(next.mtsamis).toBe(initial.mtsamis); // user non touché
+    expect(next.mtsamis).toBe(initial.mtsamis); 
   });
 
   it("should handle ADD_QUESTION by pushing question id into author's questions", () => {
@@ -104,13 +100,10 @@ describe("users reducer", () => {
 
     const next = users(initial, action);
 
-    // doit ajouter l'id à l'auteur
     expect(next.mtsamis.questions).toEqual(["q2"]);
 
-    // les autres users inchangés
     expect(next.sarahedo.questions).toEqual(["q1"]);
 
-    // immutabilité
     expect(next).not.toBe(initial);
     expect(next.mtsamis).not.toBe(initial.mtsamis);
     expect(next.sarahedo).toBe(initial.sarahedo);
@@ -136,9 +129,7 @@ describe("users reducer", () => {
       answer: "optionTwo",
     });
 
-    // nouvelle référence d'answers
     expect(next.sarahedo.answers).not.toBe(initialAnswersRef);
-    // valeur correcte
     expect(next.sarahedo.answers.q100).toBe("optionTwo");
   });
 });

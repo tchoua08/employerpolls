@@ -1,7 +1,6 @@
 export function formatDate(timestamp) {
   const d = new Date(timestamp);
 
-  // exemple: 4:11PM | 11/23/2021
   const time = d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })
     .replace(" ", "")
     .toUpperCase();

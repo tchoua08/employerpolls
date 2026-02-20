@@ -1,6 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import { setAuthedUser } from "../actions/authedUser"; // à adapter
 
 export default function Nav() {
   const dispatch = useDispatch();
@@ -9,8 +8,7 @@ export default function Nav() {
   const user = useSelector((s) => (authedUser ? s.users[authedUser] : null));
 
   const onLogout = () => {
-    // dispatch(setAuthedUser(null));
-    dispatch({ type: "SET_AUTHED_USER", id: null }); // fallback si tu utilises la même const
+    dispatch({ type: "SET_AUTHED_USER", id: null });
     navigate("/login");
   };
 

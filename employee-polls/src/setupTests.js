@@ -1,6 +1,5 @@
 import "@testing-library/jest-dom";
 
-// Masquer les warnings React Router v6 future flags (optionnel)
 const originalWarn = console.warn;
 beforeAll(() => {
   console.warn = (...args) => {
