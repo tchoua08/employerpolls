@@ -26,14 +26,13 @@ const App = (props) => {
         {props.loading ? null : (
           <Routes>
             <Route path="/login" element={<Login />} />
-
+            <Route path="/404" element={<NotFound />} />
             <Route element={<ProtectedRoute />}>
               <Route path="/" element={<Home />} />
               <Route path="/questions/:id" element={<PollPage />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
                <Route path="/add" element={<NewQuestion />} />
             </Route>
-
             <Route path="*" element={<NotFound />} />
           </Routes>
         )}
