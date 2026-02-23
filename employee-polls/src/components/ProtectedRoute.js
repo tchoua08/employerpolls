@@ -1,12 +1,19 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useAuth } from "../context/AuthContext";
 
 export default function ProtectedRoute() {
-  const authedUser = useSelector((s) => s.authedUser);
+  const { isAuthed } = useAuth();
   const location = useLocation();
 
-  if (!authedUser) {
-    return <Navigate to="/login" replace state={{ from: location.pathname }} />;
+  if (!isAuthed) {
+    return (
+      <Navigate
+        to="/login"
+        replace
+        state={{ from: location.pathname + location.search }}
+      />
+    );
   }
+
   return <Outlet />;
 }
