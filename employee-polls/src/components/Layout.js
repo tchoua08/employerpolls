@@ -33,6 +33,7 @@ const Layout = (props) => {
             <Route path="/leaderboard" element={<Leaderboard />} />
           </Route>
 
+          <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
