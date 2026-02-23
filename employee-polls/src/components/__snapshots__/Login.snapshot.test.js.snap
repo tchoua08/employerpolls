@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Login component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="login-wrap"
+  >
+    <div
+      class="login-card"
+    >
+      <h1
+        class="login-title"
+      >
+        Employee Polls
+      </h1>
+      <div
+        class="login-hero"
+      >
+        <img
+          alt="Employee Polls"
+          class="login-hero-img"
+          src="test-file-stub"
+        />
+      </div>
+      <h2
+        class="login-subtitle"
+      >
+        Log In
+      </h2>
+      <form
+        class="login-form"
+      >
+        <label
+          class="login-label"
+        >
+          User
+        </label>
+        <input
+          class="login-input"
+          placeholder="User"
+          value=""
+        />
+        <label
+          class="login-label"
+        >
+          Password
+        </label>
+        <input
+          class="login-input"
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+        <button
+          class="login-btn"
+          disabled=""
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
