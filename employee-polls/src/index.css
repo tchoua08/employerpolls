@@ -758,3 +758,33 @@ input:focus, select:focus {
   background: #2e7d32;
 }
 .muted { color: #6b7280; font-size: 13px; }
+
+/* ===== Dashboard Toggle Tabs ===== */
+.dash-toggle {
+  max-width: 880px;
+  margin: 18px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.dash-tab {
+  padding: 10px 12px;
+  border: none;
+  background: #f3f4f6;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.dash-tab.active {
+  background: #fff;
+  color: #111;
+}
+
+.dash-tab:not(.active) {
+  color: #6b7280;
+}
