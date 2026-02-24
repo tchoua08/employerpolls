@@ -14,8 +14,10 @@ const Login = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from || "/";
-
+  const from =
+  location.state?.from ||
+  sessionStorage.getItem("redirectAfterLogin") ||
+  "/";
   const canSubmit =
     selectedUser.trim() !== "" && password.trim() !== "";
 
@@ -37,6 +39,7 @@ const Login = () => {
 
     setError("");
     login(selectedUser);
+    sessionStorage.removeItem("redirectAfterLogin");
     navigate(from, { replace: true });
   };
 

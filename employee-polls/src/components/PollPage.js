@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, Navigate } from "react-router-dom";
+import { Navigate, useParams, useLocation } from "react-router-dom";
 import { handleSaveQuestionAnswer } from "../actions/questions";
-
+import { useAuth } from "../context/AuthContext";
 const PollPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const { question, author, authedUser, myAnswer } = useSelector((s) => {
     const q = s.questions?.[id] ?? null;
@@ -14,9 +15,15 @@ const PollPage = () => {
 
     return { question: q, author: a, authedUser: au, myAnswer: ans };
   });
+    const { logout } = useAuth();
 
   if (!question) {
-    return <Navigate to="/404" replace />;
+     logout();
+    return (
+      <Navigate to="/login" 
+        replace
+       />
+    );
   }
   
   const optionOneVotes = question.optionOne?.votes?.length || 0;

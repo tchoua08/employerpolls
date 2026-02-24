@@ -1,9 +1,7 @@
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
-
 export default function Leaderboard() {
   const users = useSelector((s) => s.users);
-
   const ranked = useMemo(() => {
     const list = Object.values(users || {});
     return list
@@ -14,7 +12,6 @@ export default function Leaderboard() {
       })
       .sort((a, b) => b.score - a.score);
   }, [users]);
-
   return (
     <div className="card">
       <table className="table">
