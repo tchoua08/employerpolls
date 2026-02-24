@@ -4,7 +4,7 @@ export default function NotFound() {
     const location = useLocation();
     const { logout } = useAuth();
     const requested = location.pathname;
-    if (requested) {
+    if (requested && requested !=="/questions") {
        logout();
       const requested = location.pathname.split("/")[1];
        sessionStorage.setItem("redirectAfterLogin", "/"+requested);

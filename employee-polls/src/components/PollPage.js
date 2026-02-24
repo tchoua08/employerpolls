@@ -18,6 +18,7 @@ const PollPage = () => {
     const { logout } = useAuth();
 
   if (!question) {
+    sessionStorage.setItem("redirectAfterLogin", "/"+location.pathname.split("/")[1]);
      logout();
     return (
       <Navigate to="/login" 
