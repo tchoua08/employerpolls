@@ -14,7 +14,8 @@ const Login = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from =
+   const isQuestionPage = location.state?.from.includes("/questions/");
+  const from = isQuestionPage ? "/questions" :
   location.state?.from ||
   sessionStorage.getItem("redirectAfterLogin") ||
   "/";
