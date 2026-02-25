@@ -4,7 +4,7 @@ import "./index.css";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { AuthProvider } from "./context/AuthContext.js";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import reducer from "./reducers";
 import middleware from "./middleware";
 import App from "./components/App";
@@ -15,9 +15,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
       <AuthProvider>
-         <HashRouter>
+         <BrowserRouter>
           <App />
-        </HashRouter>
+        </BrowserRouter>
       </AuthProvider>
     </Provider>
   </React.StrictMode>

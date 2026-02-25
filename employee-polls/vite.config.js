@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   // Use relative paths instead of absolute
   root: process.cwd(),
-  base: "./",
+  base: "/",
   server: {
     host: "0.0.0.0",
     port: 3001,
